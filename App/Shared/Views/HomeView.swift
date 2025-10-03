@@ -83,20 +83,20 @@ struct HomeView: View {
     private var usernameField: some View {
         Group {
             #if os(macOS)
-            TextField("Enter GitHub username", text: $bindings.username)
+            TextField("Enter GitHub username", text: $viewModel.username)
                 .textFieldStyle(.roundedBorder)
-                .onSubmit { Task { await bindings.search() } }
+                .onSubmit { Task { await viewModel.search() } }
             #elseif os(tvOS)
-            TextField("Enter GitHub username", text: $bindings.username)
+            TextField("Enter GitHub username", text: $viewModel.username)
                 .textFieldStyle(.automatic)
-                .onSubmit { Task { await bindings.search() } }
+                .onSubmit { Task { await viewModel.search() } }
             #else
-            TextField("Enter GitHub username", text: $bindings.username)
+            TextField("Enter GitHub username", text: $viewModel.username)
                 .textFieldStyle(.roundedBorder)
                 .disableAutocorrection(true)
                 .textInputAutocapitalization(.never)
                 .submitLabel(.search)
-                .onSubmit { Task { await bindings.search() } }
+                .onSubmit { Task { await viewModel.search() } }
             #endif
         }
         .padding(.horizontal)

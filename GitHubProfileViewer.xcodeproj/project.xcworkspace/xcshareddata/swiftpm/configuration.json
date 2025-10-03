@@ -1,0 +1,22 @@
+{
+  "workspaceState": {
+    "dependencies": [
+      {
+        "packageRef": {
+          "identity": "shared",
+          "kind": "local",
+          "path": "../Shared"
+        },
+        "state": {
+          "name": "local"
+        },
+        "substate": [
+          {
+            "product": "Shared",
+            "productType": "library"
+          }
+        ]
+      }
+    ]
+  }
+}
